@@ -30,8 +30,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref_name }}  # 修改了这里
-          release_name: Release ${{ github.ref_name }}  # 修改了这里
+          tag_name: ${{ github.ref }}
+          release_name: mp-wxproxy-${{ github.run_id }}
           draft: false
           prerelease: false
 
