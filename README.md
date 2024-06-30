@@ -13,10 +13,10 @@ docker run -d \
 ```yaml
 version: '3.3'
 services:
-    wxchat:
-        container_name: wxchat
+    wxproxy:
+        container_name: wxproxy
         restart: always
         ports:
             - '9080:80'
-        image: 'ddsderek/wxchat:latest'
+        image: 'sq101817/wxproxy:latest'
 ```
