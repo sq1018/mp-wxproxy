@@ -47,8 +47,8 @@
 
         .button {
             display: inline-block;
-            color: #ffffff;
-            background-color: #000000; /* 修改按钮背景颜色为黑色 */
+            color: #ffffff; /* 修改按钮文字颜色为白色 */
+            background-color: #000000; /* 保持按钮背景颜色为黑色 */
             padding: 12px 24px;
             margin-top: 20px;
             border-radius: 30px;
@@ -87,6 +87,24 @@
         .button span {
             position: relative;
             z-index: 1;
+            color: #ffffff; /* 确保链接文字颜色为白色 */
+        }
+
+        .button a {
+            text-decoration: none; /* 去掉下划线 */
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px; /* 调整输入框的边角为15px */
+            font-size: 1em;
+            width: 180px; /* 略微增加输入框的长度 */
+            margin-top: 10px; /* 调整输入框与按钮之间的距离 */
+        }
+
+        #beijing-time {
+            margin-top: 20px; /* 调整时间显示的上边距 */
         }
     </style>
 </head>
@@ -96,7 +114,11 @@
         <h1>企业微信通知代理搭建成功！</h1>
         <p>恭喜您，您已成功搭建了企业微信通知代理服务。</p>
         <p id="beijing-time"></p> <!-- 显示北京时间的容器 -->
-        <a href="#" id="closeButton" class="button"><span>点击关闭该网页</span></a>
+        <input type="text" id="serverInput" placeholder="输入服务器地址，例如：http://192.168.2.17:3000" pattern="[a-zA-Z0-9.:-]+" title="只能输入英文和数字" value="http://192.168.2.17:3000">
+        <br>
+        <div class="button">
+            <a href="#" id="closeButton"><span>点击跳转</span></a>
+        </div>
     </div>
     <script>
         // 获取北京时间并显示
@@ -115,10 +137,16 @@
         // 每秒更新一次时间
         setInterval(showBeijingTime, 1000);
 
-        // 关闭按钮功能
+        // 跳转按钮功能
         document.getElementById('closeButton').addEventListener('click', function (event) {
             event.preventDefault();
-            window.close();
+            var serverAddress = document.getElementById('serverInput').value.trim();
+            var chineseRegex = /[\u4e00-\u9fa5]/;
+            if (chineseRegex.test(serverAddress)) {
+                alert('请输入正确的网址');
+            } else {
+                window.open(serverAddress, '_blank');
+            }
         });
     </script>
 </body>
