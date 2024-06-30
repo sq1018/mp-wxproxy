@@ -21,7 +21,7 @@ jobs:
         with:
           context: .
           push: false
-          tags: your-repo-name:latest
+          tags: sq1018/mp-wxproxy:latest
           outputs: type=docker,dest=/tmp/image.tar
 
       - name: Create Release
