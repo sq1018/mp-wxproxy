@@ -1,5 +1,6 @@
 # MoviePilot 微信转发代理 Docker
 
+[![Build Status](https://github.com/sq1018/mp-wxproxy/actions/workflows/build.yml/badge.svg)](https://github.com/sq1018/mp-wxproxy/actions/workflows/build.yml)
 
 ```bash
 docker run -d \
