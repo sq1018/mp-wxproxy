@@ -7,7 +7,7 @@ docker run -d \
     --name wxchat \
     --restart=always \
     -p 9080:80 \
-    ddsderek/wxchat:latest
+    sq101817/wxproxy:latest
 ```
 
 ```yaml
