@@ -4,19 +4,19 @@
 
 ```bash
 docker run -d \
-    --name wxchat \
+    --name mp-wxproxy \
     --restart=always \
     -p 9080:80 \
-    sq101817/wxproxy:latest
+    sq101817/mp-wxproxy:latest
 ```
 
 ```yaml
 version: '3.3'
 services:
-    wxproxy:
-        container_name: wxproxy
+    mp-wxproxy:
+        container_name: mp-wxproxy
         restart: always
         ports:
             - '9080:80'
-        image: 'sq101817/wxproxy:latest'
+        image: 'sq101817/mp-wxproxy:latest'
 ```
